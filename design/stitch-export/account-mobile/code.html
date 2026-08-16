@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zam Zam Travel - Account Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed-dim": "#f7bd48",
+                    "primary-fixed-dim": "#a9cfb7",
+                    "on-tertiary-fixed-variant": "#464745",
+                    "surface-tint": "#436652",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "surface": "#fcf9f8",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#c5ecd2",
+                    "inverse-surface": "#313030",
+                    "outline": "#727973",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#414843",
+                    "surface-container-high": "#eae7e7",
+                    "on-primary-fixed": "#002112",
+                    "secondary-container": "#fdc34d",
+                    "inverse-primary": "#a9cfb7",
+                    "tertiary-fixed": "#e3e2e0",
+                    "outline-variant": "#c1c8c1",
+                    "on-tertiary-fixed": "#1a1c1a",
+                    "secondary": "#7b5800",
+                    "primary-container": "#123524",
+                    "tertiary-container": "#2e2f2d",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#ffdea6",
+                    "inverse-on-surface": "#f3f0ef",
+                    "primary": "#001f11",
+                    "surface-container-low": "#f6f3f2",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c7c6c4",
+                    "on-surface": "#1c1b1b",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#969694",
+                    "tertiary": "#191a19",
+                    "on-background": "#1c1b1b",
+                    "surface-dim": "#dcd9d9",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#715000",
+                    "on-primary-container": "#7a9f88",
+                    "surface-bright": "#fcf9f8",
+                    "on-primary-fixed-variant": "#2b4e3b",
+                    "background": "#fcf9f8",
+                    "on-secondary-fixed": "#271900",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-highest": "#e5e2e1",
+                    "surface-container": "#f0eded"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "unit": "8px",
+                    "margin-desktop": "64px",
+                    "section-padding": "120px"
+            },
+            "fontFamily": {
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ]
+            },
+            "fontSize": {
+                    "display-lg": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.15em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+        .luxury-shadow {
+            box-shadow: 0 20px 40px rgba(18, 53, 36, 0.08);
+        }
+        .divider-gold {
+            border-bottom: 0.5px solid #B8860B;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-background">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-surface-container-lowest text-primary dark:text-primary-fixed fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full">
+<button aria-label="Menu" class="text-on-surface-variant dark:text-outline hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<div class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed tracking-widest text-center flex-1 flex justify-center items-center gap-2">
+<img alt="Zam Zam Travel Logo" class="h-8 w-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OAFb266ZRqIQcyn2F7za0lxQCvBq912518SO8U8r8_v8sXlFX5UbUJQ8lK6iHNTsbd5RXJpqOq9wS1KmaAxrRmLTMThCxEZp6CRGO_chB-v36UMMhSiJxwLUX6FmorO5oU2oXL_ZVvb1HW4z_UdfW8FtLChKPkGH67tgBdk-wmuSvYUx-heS1vmIPBWom56f25KisgS6QADDSQHDuvKyO0I7Oqv2e7l4WqeMCgoxZT_1Seg9ggkj"/>
+                ZAM ZAM TRAVEL
+            </div>
+<button aria-label="Account" class="text-primary dark:text-primary-fixed font-bold hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content - Dashboard -->
+<main class="flex-1 pt-24 pb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="flex flex-col md:flex-row gap-12">
+<!-- Sidebar / Profile Summary -->
+<aside class="w-full md:w-1/4">
+<div class="bg-surface-container-lowest rounded-lg p-6 luxury-shadow border border-surface-variant">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-sm text-headline-sm">
+                            JD
+                        </div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">John Doe</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Member since 2023</p>
+</div>
+</div>
+<div class="divider-gold mb-6"></div>
+<nav class="flex flex-col gap-4">
+<a class="flex items-center gap-3 font-body-md text-body-md text-primary font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+                            Booking History
+                        </a>
+<a class="flex items-center gap-3 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                            Saved Destinations
+                        </a>
+<a class="flex items-center gap-3 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                            Account Settings
+                        </a>
+<a class="flex items-center gap-3 font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors mt-4 pt-4 border-t border-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                            Sign Out
+                        </a>
+</nav>
+</div>
+</aside>
+<!-- Dashboard Content -->
+<section class="w-full md:w-3/4 flex flex-col gap-8">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-2">Booking History</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your upcoming and past travel experiences.</p>
+</div>
+<!-- Booking Cards Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- Card 1: Pending Confirmation -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant luxury-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="h-48 w-full bg-surface-container-high relative" data-alt="A serene view of a luxury overwater bungalow in the Maldives during golden hour, calm turquoise waters, high-end travel photography style, soft natural lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrS8hAfXOY0ZQmsX-SPXzxh2jBuMFvNX-1x4QgMtq__XJNu2kKOrpkrIsMq7_ogHIvQJwdB5UJcXIoX7POuX2PrbWK8ZUdAcP6RAxwYL31aY-WYO58GGy5daGLYMmHIG2HBu2Els2itOcY0oaaLkFO-e4nRsAkcGdJ2OOlHaX7vKZXKOTf8_tbrv8T2xACp8iQccMDGKjydAlQ7shdB7j4XIZVjsOppRvNWtXisDf2So-A-xOz7VM9')">
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps text-secondary">PENDING CONFIRMATION</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Maldives Escape</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Oct 12 - Oct 19, 2024 • 2 Guests</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="font-headline-md text-headline-md text-secondary">$4,200</div>
+<button class="bg-transparent border border-primary text-primary px-4 py-2 rounded font-body-sm text-body-sm hover:bg-primary hover:text-on-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Confirmed -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant luxury-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="h-48 w-full bg-surface-container-high relative" data-alt="A majestic view of the Swiss Alps in winter, luxury ski resort setting, crisp white snow contrasting with deep green pine trees, professional editorial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDpOumrcCaG7joCbBBQD6oeXecrW5dd70rBw9FiaE0TsSKmtMni3AfrsM8Z2MBTq6EuaJp6nGLfu7S6RD9RVdWyixc8vtcPh8jBx2Vltumgw72w2f5Kp5foW4aYCcuNA7eoXvCNrfPvLzNg9RtBrfjAVKJn1_71clUeMDeySwPzSei09lpv7Yzqgh0q6sgCXzD3o-m5j5hF4Yp5t9SK7p-Mrpb6NM8GqBjduD8D4ILpXsnnkyLdN5Om')">
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps text-primary">CONFIRMED</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Swiss Alps Retreat</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Jan 05 - Jan 12, 2025 • 4 Guests</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="font-headline-md text-headline-md text-secondary">$6,850</div>
+<button class="bg-transparent border border-primary text-primary px-4 py-2 rounded font-body-sm text-body-sm hover:bg-primary hover:text-on-primary transition-colors">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Cancelled -->
+<article class="bg-surface-container-lowest rounded-lg overflow-hidden border border-surface-variant opacity-75">
+<div class="h-48 w-full bg-surface-container-high relative grayscale" data-alt="A beautifully composed shot of Kyoto streets in autumn, red maple leaves, traditional architecture, slightly muted tones indicating a past or cancelled event." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBniCFHzDaergUJRxw25VR5F-YPMpbc5eaOHCBQZhaCRnYo7y4jpF2-jEspHZxDcNlJWia_l49hytuECVxtVZruP3YMnuvBEAEP6BKl3QBWJxAp2xnuQKJ3uPGSR86VpTCW_OOBn5vq-dsYQxoyc5tHrtYNfmsBGMlaqpuEBAPWLGcWJzk9qsmRRz2kbDuzq-0Dly-CQ4Q3jHHTYgy_Iw7A4fKnwQwvSxyCGvpzK1Ptux385wwnD9ZI')">
+<div class="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur px-3 py-1 rounded-full flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label-caps text-label-caps text-error">CANCELLED</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Kyoto Cultural Tour</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">May 10 - May 20, 2024 • 2 Guests</p>
+</div>
+<div class="flex justify-between items-end mt-2">
+<div class="font-body-sm text-body-sm text-on-surface-variant italic">Refunded</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="bg-surface dark:bg-surface-container text-primary dark:text-primary-fixed fixed bottom-0 w-full z-50 bg-surface dark:bg-surface-container shadow-[0_-4px_12px_rgba(18,53,36,0.05)] shadow-lg flex justify-around items-center h-16 pb-safe w-full md:hidden">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-caps text-label-caps mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="confirmation_number">confirmation_number</span>
+<span class="font-label-caps text-label-caps mt-1">Bookings</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-caps text-label-caps mt-1">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</button>
+</nav>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container text-on-primary-container dark:text-on-tertiary-container border-t border-secondary/20 dark:border-outline-variant/20 flex flex-col gap-unit py-section-padding px-margin-mobile md:px-margin-desktop text-center w-full hidden md:flex">
+<div class="font-display-lg text-on-primary-container mb-4">
+             ZAM ZAM TRAVEL
+         </div>
+<div class="flex flex-col md:flex-row justify-center gap-6 md:gap-12 mb-8 font-body-sm text-body-sm">
+<a class="text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-secondary-fixed-dim transition-colors cursor-pointer" href="#">Fordsburg, Johannesburg</a>
+<a class="text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-secondary-fixed-dim transition-colors cursor-pointer" href="#">Irfan: 072 199 9999</a>
+<a class="text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-secondary-fixed-dim transition-colors cursor-pointer" href="#">info@zamzamtravel.co.za</a>
+<a class="text-on-primary-container/80 dark:text-on-tertiary-container/80 hover:text-secondary-fixed-dim transition-colors cursor-pointer" href="#">WhatsApp Support</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container/60">© 2024 Zam Zam Travel. All rights reserved.</p>
+</footer>
+</body></html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Booking Details - Zam Zam Travel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "primary-fixed-dim": "#a9cfb7",
+                        "on-tertiary-fixed-variant": "#464745",
+                        "surface-tint": "#436652",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "surface": "#fcf9f8",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#c5ecd2",
+                        "inverse-surface": "#313030",
+                        "outline": "#727973",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#414843",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed": "#002112",
+                        "secondary-container": "#fdc34d",
+                        "inverse-primary": "#a9cfb7",
+                        "tertiary-fixed": "#e3e2e0",
+                        "outline-variant": "#c1c8c1",
+                        "on-tertiary-fixed": "#1a1c1a",
+                        "secondary": "#7b5800",
+                        "primary-container": "#123524",
+                        "tertiary-container": "#2e2f2d",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#ffdea6",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary": "#001f11",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c7c6c4",
+                        "on-surface": "#1c1b1b",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#969694",
+                        "tertiary": "#191a19",
+                        "on-background": "#1c1b1b",
+                        "surface-dim": "#dcd9d9",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#715000",
+                        "on-primary-container": "#7a9f88",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary-fixed-variant": "#2b4e3b",
+                        "background": "#fcf9f8",
+                        "on-secondary-fixed": "#271900",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container": "#f0eded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["24px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["36px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .traveler-accordion[open] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .gold-divider {
+            border-bottom: 0.5px solid #B8860B;
+        }
+
+        .shadow-ambient {
+            box-shadow: 0 20px 40px rgba(18, 53, 36, 0.04);
+        }
+
+        /* Custom Scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fcf9f8; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c1c8c1; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #727973; 
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased pt-16 pb-32 selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar (Transactional - Suppressed Global Nav, Focused Header) -->
+<header class="fixed top-0 w-full z-50 glass-nav border-b border-surface-variant">
+<div class="max-w-container-max mx-auto h-16 px-margin-mobile md:px-margin-desktop flex items-center justify-between">
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest hidden md:inline-block">Back to Offer</span>
+</a>
+<div class="flex items-center justify-center flex-1">
+<img alt="Zam Zam Travel Logo" class="h-8 md:h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5OAFb266ZRqIQcyn2F7za0lxQCvBq912518SO8U8r8_v8sXlFX5UbUJQ8lK6iHNTsbd5RXJpqOq9wS1KmaAxrRmLTMThCxEZp6CRGO_chB-v36UMMhSiJxwLUX6FmorO5oU2oXL_ZVvb1HW4z_UdfW8FtLChKPkGH67tgBdk-wmuSvYUx-heS1vmIPBWom56f25KisgS6QADDSQHDuvKyO0I7Oqv2e7l4WqeMCgoxZT_1Seg9ggkj"/>
+</div>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-caps text-label-caps hidden md:inline-block">Secure Checkout</span>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8 md:mt-16 pb-section-padding">
+<!-- Progress Indicator -->
+<div class="w-full flex justify-center mb-12">
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-caps text-label-caps">1</div>
+<span class="font-body-sm text-body-sm text-secondary hidden md:inline-block">Select</span>
+</div>
+<div class="w-8 h-[1px] bg-secondary opacity-30"></div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-caps text-label-caps">2</div>
+<span class="font-body-sm text-body-sm text-primary-container font-semibold">Details</span>
+</div>
+<div class="w-8 h-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full border border-outline-variant text-outline-variant flex items-center justify-center font-label-caps text-label-caps">3</div>
+<span class="font-body-sm text-body-sm text-outline-variant hidden md:inline-block">Payment</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: Forms -->
+<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-8">
+<section>
+<h1 class="font-headline-md text-headline-md text-primary mb-2">Traveler Details</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Please enter details exactly as they appear on your passport or ID document.</p>
+<!-- Traveler 1 (Adult) - Primary Contact -->
+<details class="traveler-accordion group bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient mb-4" open="">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<div>
+<h3 class="font-headline-sm text-[20px] text-primary">Traveler 1 (Primary)</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Adult • Lead Passenger</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline accordion-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 border-t border-surface-variant mt-2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+<!-- First Name -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Given Names</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="As on Passport" type="text"/>
+</div>
+<!-- Surname -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Surname</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="As on Passport" type="text"/>
+</div>
+<!-- Passport -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Passport / ID Number</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="Document Number" type="text"/>
+</div>
+<!-- DOB -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Date of Birth</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors text-on-surface-variant" type="date"/>
+</div>
+<!-- WhatsApp -->
+<div class="space-y-1 md:col-span-2">
+<label class="font-body-sm text-body-sm text-on-surface-variant">WhatsApp Number</label>
+<div class="flex gap-4">
+<select class="bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface w-24">
+<option>+27</option>
+<option>+44</option>
+<option>+1</option>
+</select>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="Mobile Number" type="tel"/>
+</div>
+<p class="font-body-sm text-[12px] text-outline mt-1">For critical updates and concierge service.</p>
+</div>
+<!-- Document Upload (Bento Style) -->
+<div class="md:col-span-2 mt-4">
+<label class="font-body-sm text-body-sm text-on-surface-variant block mb-2">Passport Upload (Optional for now)</label>
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-8 flex flex-col items-center justify-center bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-4xl mb-3" data-icon="cloud_upload">cloud_upload</span>
+<span class="font-body-md text-body-md text-primary font-medium">Click to upload or drag and drop</span>
+<span class="font-body-sm text-body-sm text-outline mt-1">PDF, JPG, PNG (Max 5MB)</span>
+</div>
+</div>
+</div>
+</div>
+</details>
+<!-- Traveler 2 (Child) -->
+<details class="traveler-accordion group bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient mb-4">
+<summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" data-icon="person_outline">person_outline</span>
+<div>
+<h3 class="font-headline-sm text-[20px] text-on-surface">Traveler 2</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Child (2-11 yrs)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline accordion-icon transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-6 pt-0 border-t border-surface-variant mt-2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+<!-- First Name -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Given Names</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="As on Passport" type="text"/>
+</div>
+<!-- Surname -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Surname</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="As on Passport" type="text"/>
+</div>
+<!-- Passport -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Passport / ID Number</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors" placeholder="Document Number" type="text"/>
+</div>
+<!-- DOB -->
+<div class="space-y-1">
+<label class="font-body-sm text-body-sm text-on-surface-variant">Date of Birth</label>
+<input class="w-full bg-surface border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-2 font-body-md text-on-surface transition-colors text-on-surface-variant" type="date"/>
+</div>
+</div>
+</div>
+</details>
+<button class="mt-4 flex items-center gap-2 text-primary font-body-md font-medium hover:text-surface-tint transition-colors">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                        Add Another Traveler
+                    </button>
+</section>
+<!-- Special Requests -->
+<section class="mt-8">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Special Requests</h2>
+<textarea class="w-full bg-surface-container-lowest border border-surface-variant rounded-lg p-4 font-body-md text-on-surface focus:border-primary focus:ring-0 resize-none h-32" placeholder="Dietary requirements, accessibility needs, or special occasions..."></textarea>
+<p class="font-body-sm text-body-sm text-outline mt-2">While we strive to accommodate all requests, they are subject to availability.</p>
+</section>
+</div>
+<!-- Right Column: Order Summary & Sticky Footer (Desktop) -->
+<div class="md:col-span-5 lg:col-span-4 relative">
+<div class="sticky top-24 bg-surface-container-lowest rounded-lg border border-surface-variant shadow-ambient p-6 flex flex-col gap-6">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">Booking Summary</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Maldives Luxury Escape - 7 Nights</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between font-body-md text-on-surface">
+<span>1x Adult</span>
+<span>R 45,000</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface">
+<span>1x Child</span>
+<span>R 32,000</span>
+</div>
+<div class="flex justify-between font-body-md text-on-surface">
+<span>Taxes &amp; Fees</span>
+<span>R 4,500</span>
+</div>
+</div>
+<div class="gold-divider"></div>
+<div class="flex justify-between items-end">
+<span class="font-body-lg text-primary font-semibold">Total</span>
+<span class="font-headline-md text-secondary">R 81,500</span>
+</div>
+<div class="bg-surface-container-low p-4 rounded-md border border-surface-variant">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-outline mt-0.5" data-icon="info">info</span>
+<div>
+<h4 class="font-body-sm font-semibold text-on-surface">Refund Policy</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1 leading-relaxed">Free cancellation within 24 hours. After that, a 20% non-refundable deposit applies. Full terms available at checkout.</p>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container hover:bg-primary transition-colors py-4 px-6 rounded-md font-body-md font-semibold flex justify-center items-center gap-2 mt-2">
+                        Proceed to Payment
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-outline font-body-sm text-[12px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="shield">shield</span>
+                         256-bit Secure Encryption
+                    </div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Sticky Bottom Bar (Replaces desktop right column button on mobile) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-variant p-4 md:hidden shadow-[0_-10px_20px_rgba(0,0,0,0.05)] z-40">
+<div class="flex justify-between items-center mb-3">
+<span class="font-body-md text-on-surface">Total for 2 Travelers</span>
+<span class="font-headline-sm text-secondary">R 81,500</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container active:scale-[0.98] transition-transform py-3 px-6 rounded-md font-body-md font-semibold flex justify-center items-center gap-2">
+            Proceed to Payment
+        </button>
+</div>
+</body></html>

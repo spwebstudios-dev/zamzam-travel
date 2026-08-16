@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Zam Zam Travel - Booking History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf9f8",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-container-high": "#eae7e7",
+                        "on-background": "#1c1b1b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#1c1b1b",
+                        "on-primary-fixed-variant": "#2b4e3b",
+                        "surface-bright": "#fcf9f8",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#313030",
+                        "surface-container-highest": "#e5e2e1",
+                        "outline": "#727973",
+                        "primary-container": "#123524",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f3f0ef",
+                        "primary": "#001f11",
+                        "on-primary-container": "#7a9f88",
+                        "primary-fixed": "#c5ecd2",
+                        "on-tertiary-container": "#969694",
+                        "on-secondary-fixed": "#271900",
+                        "on-tertiary-fixed-variant": "#464745",
+                        "on-surface-variant": "#414843",
+                        "tertiary-container": "#2e2f2d",
+                        "primary-fixed-dim": "#a9cfb7",
+                        "surface-container": "#f0eded",
+                        "on-secondary-container": "#715000",
+                        "tertiary-fixed": "#e3e2e0",
+                        "on-tertiary-fixed": "#1a1c1a",
+                        "surface-tint": "#436652",
+                        "on-tertiary": "#ffffff",
+                        "secondary-container": "#fdc34d",
+                        "secondary-fixed-dim": "#f7bd48",
+                        "tertiary": "#191a19",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "secondary-fixed": "#ffdea6",
+                        "outline-variant": "#c1c8c1",
+                        "on-primary-fixed": "#002112",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e5e2e1",
+                        "surface-dim": "#dcd9d9",
+                        "on-error": "#ffffff",
+                        "secondary": "#7b5800",
+                        "tertiary-fixed-dim": "#c7c6c4",
+                        "inverse-primary": "#a9cfb7",
+                        "error-container": "#ffdad6",
+                        "surface": "#fcf9f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1280px",
+                        "section-padding": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 w-full max-w-container-max mx-auto">
+<button aria-label="Menu" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+<h1 class="font-display-lg text-headline-sm text-primary dark:text-primary-fixed tracking-widest text-center">ZAM ZAM TRAVEL</h1>
+<div class="flex items-center gap-6">
+<!-- Desktop Nav items injected here for a richer header -->
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps hover:text-primary transition-colors" href="#">Explore</a>
+<a class="text-on-surface-variant dark:text-outline font-label-caps text-label-caps hover:text-primary transition-colors" href="#">Saved</a>
+<a class="text-primary dark:text-primary-fixed font-bold font-label-caps text-label-caps border-b border-primary pb-1" href="#">Profile</a>
+</nav>
+<button aria-label="Account" class="text-primary dark:text-primary-fixed hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[100px] pb-section-padding px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Profile -->
+<aside class="w-full md:w-3/12 flex flex-col gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-surface-variant shadow-[0_20px_40px_rgba(18,53,36,0.02)]">
+<div class="flex flex-col items-center text-center pb-6 border-b border-secondary/20">
+<div class="w-24 h-24 rounded-full overflow-hidden mb-4 bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-1">John Doe</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Member since 2023</p>
+</div>
+<nav class="flex flex-col mt-6 gap-2">
+<a class="flex items-center gap-3 py-3 px-4 rounded-lg bg-surface-container text-primary font-body-md font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                        Booking History
+                    </a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-lg text-on-surface-variant hover:bg-surface-container/50 hover:text-primary transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+                        Saved Destinations
+                    </a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-lg text-on-surface-variant hover:bg-surface-container/50 hover:text-primary transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                        Account Settings
+                    </a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-lg text-error hover:bg-error-container/20 transition-colors font-body-md mt-4" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+                        Sign Out
+                    </a>
+</nav>
+</div>
+</aside>
+<!-- Booking History Content -->
+<section class="w-full md:w-9/12 flex flex-col gap-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Booking History</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Manage your upcoming and past travel experiences. Review details, download itineraries, or connect with your concierge.</p>
+</div>
+<div class="flex flex-col gap-6">
+<!-- Card 1: Pending -->
+<article class="bg-surface-container-lowest rounded-lg border border-surface-variant overflow-hidden flex flex-col md:flex-row group hover:shadow-[0_20px_40px_rgba(18,53,36,0.08)] transition-shadow duration-300">
+<div class="w-full md:w-2/5 h-48 md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxurious overwater bungalow in the Maldives at sunset, featuring pristine turquoise waters, warm golden lighting, a serene and exclusive high-end hospitality mood. Modern minimalistic architectural style against a vibrant twilight sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwG7P15AvJDJfoZrW6dxm4LATB7pdoQyAI0lGOf8fpDJXs_E3Rjfx3zwZHugx6-ZKzg5nfycIlzxtc8J-L_oO9iprfd4PKHHK4yCyp2EbenPjFRt4Ibj4NYuNSgvieAGEj6y_TheQ3SSvHqall-Vw8gHG9YYHJgoq_6aA_Lq-7AvBh-Mkr3dltavjm47kTOW6qnamcENw8NUyx4eS6w4KdFP4W-g-lt34moz9Z1rb0AvBgzxTvT76"/>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Maldives Escape</h3>
+<span class="bg-secondary-container/20 text-secondary font-label-caps text-label-caps px-3 py-1 rounded-full border border-secondary/20 tracking-wider">PENDING CONFIRMATION</span>
+</div>
+<div class="flex flex-col gap-1 mb-4">
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span> Oct 12 - Oct 19, 2024
+                                </p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">group</span> 2 Guests
+                                </p>
+</div>
+</div>
+<div class="flex justify-between items-end pt-4 border-t border-surface-variant">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Package</p>
+<p class="font-headline-sm text-headline-sm text-secondary font-medium">$4,200</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 rounded font-body-sm text-body-sm text-primary border border-primary hover:bg-primary/5 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Confirmed -->
+<article class="bg-surface-container-lowest rounded-lg border border-surface-variant overflow-hidden flex flex-col md:flex-row group hover:shadow-[0_20px_40px_rgba(18,53,36,0.08)] transition-shadow duration-300">
+<div class="w-full md:w-2/5 h-48 md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking view of snow-capped Swiss Alps from a premium cozy chalet window. Crisp daylight, high contrast between white snow and deep green pines, evoking a curated winter adventure and luxury retreat." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC90E-q4TWtMEF9oO9FO2CKl_p075HvnXZhpI7-xnwyIkIj-wq9Yk0OQ-b4r_kdCcBJkUlwehw3M-Porepio4MbhGzHTglaht0xoydMVxqCJXizK9psa8AD696wEHPw41sWbw3q3845jZdOSanOURcFiUPmu9dkJJIk9yoxqhOxZjRMQwbBlObCkOIuDSEAr-X3TvHAgwISukFnHtRXp3NkwL6oH2Y-S0JR9kG89251gf2T7doKz9ra"/>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Swiss Alps Retreat</h3>
+<span class="bg-primary-container/10 text-primary-container font-label-caps text-label-caps px-3 py-1 rounded-full border border-primary-container/20 tracking-wider">CONFIRMED</span>
+</div>
+<div class="flex flex-col gap-1 mb-4">
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span> Jan 05 - Jan 12, 2025
+                                </p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">group</span> 4 Guests
+                                </p>
+</div>
+</div>
+<div class="flex justify-between items-end pt-4 border-t border-surface-variant">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Package</p>
+<p class="font-headline-sm text-headline-sm text-secondary font-medium">$6,850</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 rounded font-body-sm text-body-sm text-on-primary bg-primary hover:bg-primary/90 transition-colors shadow-sm">Get Itinerary</button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Cancelled -->
+<article class="bg-surface-container-lowest rounded-lg border border-surface-variant overflow-hidden flex flex-col md:flex-row opacity-75 grayscale-[30%] hover:grayscale-0 transition-all duration-300">
+<div class="w-full md:w-2/5 h-48 md:h-auto relative overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A serene traditional Kyoto garden with a minimalist wooden teahouse in the background. Soft, diffused daylight highlighting moss greens and subtle cherry blossom pinks, conveying a peaceful, high-end cultural experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkZ4WsXG81yGFN3xfwzaockPuT34TAFVOgTCcVmK4V2SCoVUJkWEIeqkY-MdGb8v9_LkLJuB1b8IF6iDndG6SOIsdrjgGt6-QXJByV6TXIO-iZ8RQAfvBXibIhvgFa66W-R95-ZVjfjccYQ_Zd6ZNscvLw59DGlqtOFei-6wjXkwm9Yih4P0WliW0lhYPLaq5bAqPw-5g8vAF4s0T9d66tQyV2zJfTxRI6tOEQSMjirq8Whl5WyPSF"/>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant">Kyoto Cultural Tour</h3>
+<span class="bg-error-container/20 text-error font-label-caps text-label-caps px-3 py-1 rounded-full border border-error/20 tracking-wider">CANCELLED</span>
+</div>
+<div class="flex flex-col gap-1 mb-4">
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline-variant">calendar_today</span> May 10 - May 20, 2024
+                                </p>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline-variant">group</span> 2 Guests
+                                </p>
+</div>
+</div>
+<div class="flex justify-between items-end pt-4 border-t border-surface-variant">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Status</p>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium">Refunded</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2 rounded font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Rebook Trip</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-tertiary-container w-full border-t border-secondary/20 dark:border-outline-variant/20 flex flex-col gap-unit py-section-padding px-margin-mobile md:px-margin-desktop text-center mt-auto">
+<h2 class="font-display-lg text-on-primary-container mb-6 text-2xl md:text-3xl">ZAM ZAM TRAVEL</h2>
+<div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-8 text-on-primary-container/80 dark:text-on-tertiary-container/80 font-body-sm text-body-sm">
+<span class="hover:text-secondary-fixed-dim transition-colors cursor-pointer">Fordsburg, Johannesburg</span>
+<span class="hidden md:inline text-secondary/50">•</span>
+<span class="hover:text-secondary-fixed-dim transition-colors cursor-pointer">Irfan: 072 199 9999</span>
+<span class="hidden md:inline text-secondary/50">•</span>
+<span class="hover:text-secondary-fixed-dim transition-colors cursor-pointer">info@zamzamtravel.co.za</span>
+<span class="hidden md:inline text-secondary/50">•</span>
+<span class="hover:text-secondary-fixed-dim transition-colors cursor-pointer font-medium text-secondary-fixed dark:text-secondary-fixed-dim">WhatsApp Support</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container/60">© 2024 Zam Zam Travel. All rights reserved.</p>
+</footer>
+</body></html>
