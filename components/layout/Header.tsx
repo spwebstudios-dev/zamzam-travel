@@ -1,7 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { createBrowserClient } from '@/lib/supabase';
+import { logout } from '@/app/actions/logout';
+import type { User } from '@supabase/supabase-js';
 
 /**
  * Site-wide header.
@@ -10,11 +14,34 @@ import { useState } from 'react';
  * Mobile: fixed top bar with hamburger left, logo centre, account icon right.
  * On scroll over imagery: glassmorphism backdrop-blur effect (bg-surface/80).
  *
+ * Auth-aware: subscribes to onAuthStateChange so the header updates
+ * immediately after login/logout without a full page reload.
+ *
  * Design source: design/stitch-export/homepage-mobile/code.html (TopAppBar section)
  * Brand tokens: design/brand/palette-notes.md
  */
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createBrowserClient();
+
+    // Get initial session
+    supabase.auth.getUser().then(({ data }) => setUser(data.user));
+
+    // Subscribe to auth changes
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (_event, session) => {
+        setUser(session?.user ?? null);
+      }
+    );
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const isLoggedIn = !!user;
 
   return (
     <>
@@ -56,6 +83,15 @@ export default function Header() {
               >
                 About
               </Link>
+              {/* Login link — desktop, logged out only */}
+              {!isLoggedIn && (
+                <Link
+                  href="/login"
+                  className="label-caps text-[color:var(--color-on-surface-variant)] hover:text-[color:var(--color-primary)] transition-colors"
+                >
+                  Login
+                </Link>
+              )}
             </nav>
           </div>
 
@@ -91,9 +127,9 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* ── Right: account icon + Book Now CTA ── */}
+          {/* ── Right: account icon + Book Now CTA / Logout ── */}
           <div className="flex items-center gap-3">
-            {/* Account icon — mobile shows this, desktop shows it too */}
+            {/* Account icon — always visible */}
             <Link
               href="/account"
               id="account-icon-link"
@@ -106,18 +142,35 @@ export default function Header() {
               </svg>
             </Link>
 
-            {/* Book Now CTA — desktop only */}
-            <Link
-              href="/packages"
-              id="header-book-now-cta"
-              className="hidden md:inline-flex items-center label-caps px-4 py-2 rounded transition-opacity hover:opacity-80"
-              style={{
-                backgroundColor: 'var(--color-primary-container)',
-                color: 'var(--color-on-primary-container)',
-              }}
-            >
-              Book Now
-            </Link>
+            {/* Logged in: Log Out button (desktop) */}
+            {isLoggedIn ? (
+              <form action={logout} className="hidden md:block">
+                <button
+                  id="header-logout-btn"
+                  type="submit"
+                  className="label-caps px-4 py-2 rounded transition-opacity hover:opacity-80"
+                  style={{
+                    backgroundColor: 'var(--color-surface-container-high)',
+                    color: 'var(--color-on-surface-variant)',
+                  }}
+                >
+                  Log Out
+                </button>
+              </form>
+            ) : (
+              /* Logged out: Book Now CTA (desktop) */
+              <Link
+                href="/packages"
+                id="header-book-now-cta"
+                className="hidden md:inline-flex items-center label-caps px-4 py-2 rounded transition-opacity hover:opacity-80"
+                style={{
+                  backgroundColor: 'var(--color-primary-container)',
+                  color: 'var(--color-on-primary-container)',
+                }}
+              >
+                Book Now
+              </Link>
+            )}
           </div>
         </div>
 
@@ -146,25 +199,50 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              href="/login"
-              className="label-caps text-[color:var(--color-on-surface-variant)]"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Login
-            </Link>
-            <Link
-              href="/packages"
-              id="mobile-book-now-cta"
-              className="label-caps px-4 py-2 rounded text-center transition-opacity hover:opacity-80"
-              style={{
-                backgroundColor: 'var(--color-primary-container)',
-                color: 'var(--color-on-primary-container)',
-              }}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Book Now
-            </Link>
+
+            {isLoggedIn ? (
+              <>
+                <Link
+                  href="/account"
+                  className="label-caps text-[color:var(--color-on-surface-variant)]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  My Account
+                </Link>
+                <form action={logout}>
+                  <button
+                    id="mobile-logout-btn"
+                    type="submit"
+                    className="label-caps text-[color:var(--color-on-surface-variant)] text-left"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Log Out
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="label-caps text-[color:var(--color-on-surface-variant)]"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/packages"
+                  id="mobile-book-now-cta"
+                  className="label-caps px-4 py-2 rounded text-center transition-opacity hover:opacity-80"
+                  style={{
+                    backgroundColor: 'var(--color-primary-container)',
+                    color: 'var(--color-on-primary-container)',
+                  }}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Book Now
+                </Link>
+              </>
+            )}
           </nav>
         )}
       </header>
